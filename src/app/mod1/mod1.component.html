@@ -1,0 +1,21 @@
+<h1>Использование собственных директив</h1>
+<p appClick>Событие Click</p>
+<p appMod1>Изменение размера шрифта</p>
+<p appBold>Использован @HostBinding</p>
+<hr>
+<br>
+<h2>Использование в директиве @HostListener("input")</h2>
+<p> 1. В следующем примере атрибутах input используется директива myInputEvent 
+    и подписка на событие с таким же именем. <br>
+     При вводе данных в поле, в консоль выводятся сообщения обоих функций.
+   <br> <input type="text" myInputEvent (myInputEvent)='myInputHandler($event)' >
+</p>
+<hr>
+<p>
+2. В следующем примере в атрибутах отсутствует директива myInputEvent, осталась только подписка на событие, <br>
+но если помотреть в консоль директива срабатывает так-же как в предыдущем примере. <br>
+Директива срабатывает по причине использования имени директивы в атрибуте т.к. событие имеет такое же имя.<br>
+<input type="text" (myInputEvent)='myInputHandler($event)' >
+</p>
+<!-- <input type="text" #qwe="myInput" (myInputEvent)='myInputHandler($event)' >
+<button (click)="qweConsole(qwe)">myInput -> console.log</button> -->
